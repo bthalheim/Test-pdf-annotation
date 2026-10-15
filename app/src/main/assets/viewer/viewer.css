@@ -1,0 +1,181 @@
+:root {
+  --toolbar-bg: #1f2937;
+  --toolbar-fg: #f9fafb;
+  --button-bg: #374151;
+  --button-active: #2563eb;
+  --viewer-bg: #e5e7eb;
+  font-family: system-ui, -apple-system, Roboto, sans-serif;
+  font-size: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--viewer-bg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#toolbar {
+  flex: none;
+  background: var(--toolbar-bg);
+  color: var(--toolbar-fg);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  user-select: none;
+}
+
+#toolbar .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+#title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+#page-label { font-variant-numeric: tabular-nums; opacity: 0.8; }
+
+.group { display: flex; gap: 2px; }
+
+#toolbar button {
+  min-width: 36px;
+  height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: inherit;
+  font: inherit;
+}
+
+#toolbar button.active { background: var(--button-active); }
+#toolbar button:disabled { opacity: 0.4; }
+#toolbar .zoom-label { min-width: 56px; font-variant-numeric: tabular-nums; }
+
+#colors button.swatch {
+  min-width: 0;
+  width: 28px;
+  height: 28px;
+  margin: 3px 2px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+#colors button.swatch.active { border-color: var(--toolbar-fg); }
+
+#viewer {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+#pages {
+  width: max-content;
+  min-width: 100%;
+  padding: 8px 0;
+}
+
+.page {
+  position: relative;
+  margin: 0 auto 8px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.page canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Annotation layer: an SVG in unscaled page coordinates stretched over the page. */
+.page svg.annotation-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+body[data-tool="pen"] svg.annotation-layer,
+body[data-tool="highlight"] svg.annotation-layer,
+body[data-tool="note"] svg.annotation-layer,
+body[data-tool="eraser"] svg.annotation-layer {
+  pointer-events: auto;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.annotation-layer .highlight { mix-blend-mode: multiply; }
+.annotation-layer .ink { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Notes stay tappable in pan mode so they can be read and edited. */
+.annotation-layer .note { pointer-events: auto; cursor: pointer; }
+.annotation-layer .note text { font: bold 12px sans-serif; fill: white; pointer-events: none; }
+
+#status {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(17, 24, 39, 0.9);
+  color: white;
+}
+
+dialog {
+  width: min(420px, calc(100% - 32px));
+  border: 0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+dialog::backdrop { background: rgba(0, 0, 0, 0.4); }
+dialog label { display: block; font-weight: 600; margin-bottom: 6px; }
+
+dialog textarea {
+  width: 100%;
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.dialog-actions { display: flex; gap: 8px; margin-top: 12px; }
+.dialog-actions .spacer { flex: 1; }
+
+.dialog-actions button {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font: inherit;
+}
+
+.dialog-actions button.primary { background: var(--button-active); border-color: var(--button-active); color: white; }
+#note-delete { color: #b91c1c; }

@@ -1,0 +1,64 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 338 >>
+stream
+BT /F1 24 Tf 72 720 Td (Sample PDF - Page 1) Tj ET
+BT /F1 14 Tf 72 680 Td (This is a sample document bundled with the app.) Tj ET
+BT /F1 14 Tf 72 656 Td (Use the toolbar to draw, highlight, add notes and erase.) Tj ET
+BT /F1 14 Tf 72 632 Td (Annotations are saved per document on the device.) Tj ET
+0.2 0.4 0.8 RG 2 w 72 100 m 540 100 l S
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 612 792] /Contents 2 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 231 >>
+stream
+BT /F1 24 Tf 72 720 Td (Page 2) Tj ET
+BT /F1 14 Tf 72 680 Td (The quick brown fox jumps over the lazy dog.) Tj ET
+BT /F1 14 Tf 72 656 Td (Try highlighting this line with the Mark tool.) Tj ET
+0.2 0.4 0.8 RG 2 w 72 100 m 540 100 l S
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 223 >>
+stream
+BT /F1 24 Tf 72 720 Td (Page 3) Tj ET
+BT /F1 14 Tf 72 680 Td (Zoom in and out with the - and + buttons.) Tj ET
+BT /F1 14 Tf 72 656 Td (Undo reverts your last annotation change.) Tj ET
+0.2 0.4 0.8 RG 2 w 72 100 m 540 100 l S
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+8 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R] /Count 3 >>
+endobj
+9 0 obj
+<< /Type /Catalog /Pages 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000468 00000 n 
+0000000594 00000 n 
+0000000876 00000 n 
+0000001002 00000 n 
+0000001276 00000 n 
+0000001402 00000 n 
+0000001471 00000 n 
+trailer
+<< /Size 10 /Root 9 0 R >>
+startxref
+1520
+%%EOF

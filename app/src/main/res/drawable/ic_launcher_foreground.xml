@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A page with a folded corner and a pen stroke. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,30h26l12,12v36h-38z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M62,30v12h12z" />
+    <path
+        android:strokeColor="#EF4444"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M42,64c6,-8 10,4 16,-4s8,2 12,-2" />
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M42,48h24v6h-24z" />
+</vector>

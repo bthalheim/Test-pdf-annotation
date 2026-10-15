@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>PDF Annotator</title>
+  <link rel="stylesheet" href="viewer.css">
+  <script type="module" src="viewer.js"></script>
+</head>
+<body>
+  <header id="toolbar">
+    <div class="row">
+      <button id="open" type="button">Open</button>
+      <span id="title">Loading…</span>
+      <span id="page-label"></span>
+    </div>
+    <div class="row">
+      <div class="group" id="tools" role="radiogroup" aria-label="Tool">
+        <button type="button" data-tool="pan" class="active" aria-pressed="true">Pan</button>
+        <button type="button" data-tool="pen">Pen</button>
+        <button type="button" data-tool="highlight">Mark</button>
+        <button type="button" data-tool="note">Note</button>
+        <button type="button" data-tool="eraser">Erase</button>
+      </div>
+      <div class="group" id="colors" aria-label="Color"></div>
+      <div class="group">
+        <button type="button" id="undo" disabled>Undo</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+      <div class="group">
+        <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-fit" class="zoom-label">100%</button>
+        <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="viewer"><div id="pages"></div></main>
+  <div id="status" hidden></div>
+
+  <dialog id="note-dialog">
+    <form method="dialog">
+      <label for="note-text">Note</label>
+      <textarea id="note-text" rows="4"></textarea>
+      <div class="dialog-actions">
+        <button type="submit" value="delete" id="note-delete">Delete</button>
+        <span class="spacer"></span>
+        <button type="submit" value="cancel">Cancel</button>
+        <button type="submit" value="save" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
